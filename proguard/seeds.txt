@@ -1,0 +1,4 @@
+us.wmwm.temperature.TemperatureService
+us.wmwm.temperature.TemperatureService: TemperatureService()
+us.wmwm.temperature.TemperatureWidget
+us.wmwm.temperature.TemperatureWidget: TemperatureWidget()

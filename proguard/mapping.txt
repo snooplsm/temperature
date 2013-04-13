@@ -1,0 +1,11 @@
+us.wmwm.temperature.TemperatureService -> us.wmwm.temperature.TemperatureService:
+    android.hardware.SensorManager manager -> a
+    java.util.List lastFive -> b
+    java.text.DecimalFormat DF -> c
+    void onCreate() -> onCreate
+    int onStartCommand(android.content.Intent,int,int) -> onStartCommand
+    android.os.IBinder onBind(android.content.Intent) -> onBind
+    void onAccuracyChanged(android.hardware.Sensor,int) -> onAccuracyChanged
+    void onSensorChanged(android.hardware.SensorEvent) -> onSensorChanged
+us.wmwm.temperature.TemperatureWidget -> us.wmwm.temperature.TemperatureWidget:
+    void onUpdate(android.content.Context,android.appwidget.AppWidgetManager,int[]) -> onUpdate
