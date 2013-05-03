@@ -4,6 +4,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.app.PendingIntent;
 import android.app.Service;
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
@@ -84,6 +85,8 @@ public class TemperatureService extends Service implements SensorEventListener {
 						.getApplicationContext().getPackageName(),
 						R.layout.widget_temperature);
 				remoteViews.setTextViewText(R.id.text, temp);
+				PendingIntent p = PendingIntent.getActivity(this, 0, new Intent(this, MainActivity.class), 0);
+				remoteViews.setOnClickPendingIntent(R.id.root, p);
 				appWidgetManager.updateAppWidget(widgetId, remoteViews);
 			}
 			stopSelf();
