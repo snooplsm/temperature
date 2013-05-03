@@ -1,5 +1,5 @@
 <resources>
 
     <string name="app_name">Temperature</string>
-	<string name="default_temp">--°</string>
+	<string name="default_temp">--</string>
 </resources>

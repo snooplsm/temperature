@@ -69,6 +69,7 @@ public class TemperatureService extends Service implements SensorEventListener {
 				tmp += f;
 			}
 			tmp = tmp / (float) lastFive.size();
+			DBHelper.getInstance().saveTemperature(tmp);
 			tmp = (tmp*9)/5f+32;
 			lastFive.clear();
 			AppWidgetManager appWidgetManager = AppWidgetManager

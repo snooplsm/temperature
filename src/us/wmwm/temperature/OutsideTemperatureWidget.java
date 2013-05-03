@@ -6,16 +6,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
-public class TemperatureWidget extends AppWidgetProvider {
+public class OutsideTemperatureWidget extends AppWidgetProvider {
 
 	@Override
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager,
 			int[] appWidgetIds) {
+		// TODO Auto-generated method stub
 		super.onUpdate(context, appWidgetManager, appWidgetIds);
 		Log.i("TEMP", "onUpdate");
 		Intent intent = new Intent(context.getApplicationContext(),
-				TemperatureService.class);
+				OutsideTemperatureService.class);
 		context.startService(intent);
-
 	}
+	
 }
