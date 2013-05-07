@@ -37,18 +37,7 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/widget_info" />
         </receiver>
-        <receiver
-            android:name="TemperatureWidget"
-            android:icon="@drawable/icon"
-            android:label="Temp Fahrenheit (ambient)" >
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-            </intent-filter>
 
-            <meta-data
-                android:name="android.appwidget.provider"
-                android:resource="@xml/widget_info" />
-        </receiver>
         <!--
              <receiver
             android:name="OutsideTemperatureWidget"
