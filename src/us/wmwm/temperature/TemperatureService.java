@@ -4,7 +4,6 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.app.PendingIntent;
 import android.app.Service;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProviderInfo;
@@ -15,7 +14,6 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
 import android.widget.RemoteViews;
@@ -33,12 +31,6 @@ public class TemperatureService extends Service implements SensorEventListener {
 		super.onCreate();
 		Log.i("TEMP", "onCreate");
 		manager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-		try {
-			Thread.sleep(10000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 
 	@Override
@@ -93,8 +85,8 @@ public class TemperatureService extends Service implements SensorEventListener {
 				RemoteViews remoteViews = new RemoteViews(this
 						.getApplicationContext().getPackageName(),
 						R.layout.widget_temperature);
-				AppWidgetProviderInfo info = appWidgetManager.getAppWidgetInfo(widgetId);
 					remoteViews.setTextViewText(R.id.text, temp);
+					remoteViews.setInt(R.id.text, "backgroundResource", R.drawable.icon);
 				//remoteViews.setOnClickPendingIntent(R.id.root, p);
 				appWidgetManager.updateAppWidget(widgetId, remoteViews);
 			}
@@ -107,7 +99,6 @@ public class TemperatureService extends Service implements SensorEventListener {
 				RemoteViews remoteViews = new RemoteViews(this
 						.getApplicationContext().getPackageName(),
 						R.layout.widget_temperature);
-				AppWidgetProviderInfo info = appWidgetManager.getAppWidgetInfo(widgetId);
 					remoteViews.setTextViewText(R.id.text, temp);
 				//remoteViews.setOnClickPendingIntent(R.id.root, p);
 				appWidgetManager.updateAppWidget(widgetId, remoteViews);

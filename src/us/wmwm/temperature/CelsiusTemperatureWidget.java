@@ -1,23 +1,7 @@
 package us.wmwm.temperature;
 
-import android.appwidget.AppWidgetManager;
-import android.appwidget.AppWidgetProvider;
-import android.content.Context;
-import android.content.Intent;
-import android.util.Log;
 
-public class CelsiusTemperatureWidget extends AppWidgetProvider {
+public class CelsiusTemperatureWidget extends TemperatureWidget {
 
-	@Override
-	public void onUpdate(Context context, AppWidgetManager appWidgetManager,
-			int[] appWidgetIds) {
-		super.onUpdate(context, appWidgetManager, appWidgetIds);
-		Log.i("TEMP", "onUpdate");
-		Intent intent = new Intent(context.getApplicationContext(),
-				TemperatureService.class);
-		intent.putExtra("celsius", true);
-		context.startService(intent);
-
-	}
 	
 }
